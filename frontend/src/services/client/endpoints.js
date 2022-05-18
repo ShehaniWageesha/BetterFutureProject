@@ -1,0 +1,10 @@
+export const POLITICIAN = '/Politician';
+export const DELETE_POLITICIAN = '/Politician';
+export const CREATE_POLITICIAN = 'Politician/add';
+export const GET_POLITICIAN = '/Politician';
+export const UPDATE_POLITICIAN = '/Politician/update';
+export const POLICY = '/Policy';
+export const DELETE_POLICY = '/Policy';
+export const CREATE_POLICY = 'Policy/add';
+export const GET_POLICY = '/Policy';
+export const UPDATE_POLICY = '/Policy/update';
