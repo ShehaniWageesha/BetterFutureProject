@@ -6,12 +6,12 @@ function Politician() {
     <div className="DashMain">
       <div>
         <Link to="/createPolitician" className="nav-link">
-          <h1>Add Politician</h1>
+          <h1 style={{ color: "#424242" }}>Add Politician</h1>
         </Link>
       </div>
       <div>
         <Link to="/politicians" className="nav-link">
-          <h1>Politicians</h1>
+          <h1 style={{ color: "#424242" }}>Politicians</h1>
         </Link>
       </div>
     </div>

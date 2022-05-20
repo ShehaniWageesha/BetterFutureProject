@@ -4,7 +4,7 @@ const PolicyModel = require("../models/policy.model");
 const APIError = require("../helpers/api-error");
 const logger = require("../helpers/logger");
 
-const createPolicies = async ({  }) => {
+const createPolicies = async ({ title, subject, challenge, suggestion, rating }) => {
   let session = null;
   try {
     session = await mongoose.startSession();

@@ -15,7 +15,7 @@ function AddPolitician() {
     officePhone: "",
     homePhone: "",
     school: "",
-    maxQualification: "",
+    maxQualifications: "",
     fb: "",
     utube: "",
     web: "",
@@ -27,7 +27,7 @@ function AddPolitician() {
     district: "",
     previousTerms: "",
     projectOngoing: "",
-    rating: 5
+    rating: 5,
   });
 
   function handleChange(evt) {
@@ -62,14 +62,18 @@ function AddPolitician() {
   };
 
   return (
-    <div>
-      <h3>Add Politician</h3>
+    <div style={{ color: "#424242" }}>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Politician</h2>
       <br></br>
-      <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ float: "left", width: "30rem" }}>
-      <h5>BASIC INFO</h5>
-      <br></br>
+      <form
+        noValidate
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{ float: "left", width: "30rem", fontWeight: "bolder" }}
+      >
+        <h5 style={{ fontStyle: "italic" }}>BASIC INFO</h5>
+        <br></br>
         <div className="form-group">
-          <label>Fullname :</label>
+          <label>Fullname</label>
           <input
             type="text"
             name="fullname"
@@ -77,10 +81,11 @@ function AddPolitician() {
             className="form-control"
             value={data.fullname}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Date of Birth :</label>
+          <label>Date of Birth</label>
           <div>
             <DatePicker
               name="dob"
@@ -95,216 +100,253 @@ function AddPolitician() {
           </div>
         </div>
         <div className="form-group">
-          <label>Gender :</label>
-          <input
-            type="text"
-            name="gender"
-            required
-            className="form-control"
-            value={data.gender}
-            onChange={handleChange}
-          />
+          <label>Gender</label>
+          <div className="form-group" style={{ fontWeight: "normal" }}>
+            <input
+              type="radio"
+              name="gender"
+              value="Male"
+              checked={data.gender === "Male"}
+              onChange={handleChange}
+              style={{ background: "transparent" }}
+            />
+            <label> Male </label>
+          </div>
+          <div className="form-group" style={{ fontWeight: "normal" }}>
+            <input
+              type="radio"
+              name="gender"
+              value="Female"
+              checked={data.gender === "Female"}
+              onChange={handleChange}
+              style={{ background: "transparent" }}
+            />
+            <label> Female </label>
+          </div>
         </div>
         <br></br>
-        <h5>CONTACT INFO</h5>
-      <br></br>
+        <h5 style={{ fontStyle: "italic" }}>CONTACT INFO</h5>
+        <br></br>
         <div className="form-group">
-          <label>Email Address :</label>
+          <label>Email Address</label>
           <input
             type="text"
             name="email"
             className="form-control"
             value={data.email}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Address - Office :</label>
+          <label>Address - Office</label>
           <input
             type="text"
             name="officeAddress"
             className="form-control"
             value={data.officeAddress}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Address - Home :</label>
+          <label>Address - Home</label>
           <input
             type="text"
             name="homeAddress"
             className="form-control"
             value={data.homeAddress}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Phone Number - Office :</label>
+          <label>Phone Number - Office</label>
           <input
             type="text"
             name="officePhone"
             className="form-control"
             value={data.officePhone}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Phone Number - Home :</label>
+          <label>Phone Number - Home</label>
           <input
             type="text"
             name="homePhone"
             className="form-control"
             value={data.homePhone}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <br></br>
-        <h5>EDUCATIONAL INFO</h5>
-      <br></br>
+        <h5 style={{ fontStyle: "italic" }}>EDUCATIONAL INFO</h5>
+        <br></br>
         <div className="form-group">
-          <label>School :</label>
+          <label>School</label>
           <input
             type="text"
             name="school"
             className="form-control"
             value={data.school}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Maximum Qualification :</label>
+          <label>Maximum Qualification</label>
           <input
             type="text"
-            name="maxQualification"
+            name="maxQualifications"
             className="form-control"
-            value={data.maxQualification}
+            value={data.maxQualifications}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
-        </form>
-        <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ float: "right", width: "30rem" }}>
-        <h5>SOCIAL MEDIA INFO</h5>
-      <br></br>
+      </form>
+      <form
+        noValidate
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{ float: "right", width: "30rem", fontWeight: "bolder" }}
+      >
+        <h5 style={{ fontStyle: "italic" }}>SOCIAL MEDIA INFO</h5>
+        <br></br>
         <div className="form-group">
-          <label>Facebook :</label>
+          <label>Facebook</label>
           <input
             type="text"
             name="fb"
             className="form-control"
             value={data.fb}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Youtube :</label>
+          <label>Youtube</label>
           <input
             type="text"
             name="utube"
             className="form-control"
             value={data.utube}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Web Site :</label>
+          <label>Website</label>
           <input
             type="text"
             name="web"
             className="form-control"
             value={data.web}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
-        <h5>POLITICAL INFO</h5>
-      <br></br>
+        <h5 style={{ fontStyle: "italic" }}>POLITICAL INFO</h5>
+        <br></br>
         <div className="form-group">
-          <label>Secretary :</label>
+          <label>Secretary</label>
           <input
             type="text"
             name="secretary"
             className="form-control"
             value={data.secretary}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Secretary Phone :</label>
+          <label>Secretary Phone</label>
           <input
             type="text"
             name="secPhone"
             className="form-control"
             value={data.secPhone}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Secretary Email :</label>
+          <label>Secretary Email</label>
           <input
             type="text"
             name="secEmail"
             className="form-control"
             value={data.secEmail}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Party :</label>
+          <label>Party</label>
           <input
             type="text"
             name="party"
             className="form-control"
             value={data.party}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Position :</label>
+          <label>Position</label>
           <input
             type="text"
             name="position"
             className="form-control"
             value={data.position}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>District :</label>
+          <label>District</label>
           <input
             type="text"
             name="district"
             className="form-control"
             value={data.district}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Previous Terms :</label>
+          <label>Previous Terms</label>
           <input
             type="text"
             name="previousTerms"
             className="form-control"
             value={data.previousTerms}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Ongoing Projects :</label>
+          <label>Ongoing Projects</label>
           <input
             type="text"
-            name="projectsOngoing"
+            name="projectOngoing"
             className="form-control"
             value={data.projectOngoing}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Rating :</label>
+          <label>Rating</label>
           <input
             type="number"
             name="rating"
             className="form-control"
             value={data.rating}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <br></br>
@@ -312,7 +354,7 @@ function AddPolitician() {
           <input
             type="submit"
             value="Add Politician"
-            className="btn btn-primary"
+            className="btn btn-dark"
           />
         </div>
       </form>

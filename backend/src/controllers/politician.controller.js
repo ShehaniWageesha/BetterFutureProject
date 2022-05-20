@@ -12,7 +12,7 @@ const create = async (req, res) => {
         .json({ message: "Invalid request", errors: errors.array() });
     }
 
-    const { fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating } = req.body;
+    const { fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating } = req.body;
 
     const result = await PoliticianService.createPoliticians({
       fullname,
@@ -24,7 +24,7 @@ const create = async (req, res) => {
       officePhone,
       homePhone,
       school,
-      maxQualification,
+      maxQualifications,
       fb,
       utube,
       web,
@@ -71,7 +71,7 @@ const findOne = async (req, res) => {
 const update = async (req, res) => {
   try {
     const id = req.params.id;
-    const { fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating } = req.body;
+    const { fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating } = req.body;
 
     const result = await PoliticianService.updatePolitician({
       id,
@@ -84,7 +84,7 @@ const update = async (req, res) => {
       officePhone,
       homePhone,
       school,
-      maxQualification,
+      maxQualifications,
       fb,
       utube,
       web,

@@ -4,14 +4,14 @@ const PoliticianModel = require("../models/politician.model");
 const APIError = require("../helpers/api-error");
 const logger = require("../helpers/logger");
 
-const createPoliticians = async ({ fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating }) => {
+const createPoliticians = async ({ fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating }) => {
   let session = null;
   try {
     session = await mongoose.startSession();
     session.startTransaction();
 
     const politician = new PoliticianModel({
-      fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating
+      fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating
     });
 
     const createPoliticians = await politician.save({ session });
@@ -70,11 +70,11 @@ const getPoliticianById = async (id) => {
   }
 };
 
-const updatePolitician = async ({ id, fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating }) => {
+const updatePolitician = async ({ id, fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating }) => {
   try {
     const politician = await PoliticianModel.findById(id);
 
-    politician.overwrite({ fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualification, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating });
+    politician.overwrite({ fullname, dob, gender, email, officeAddress, homeAddress, officePhone, homePhone, school, maxQualifications, fb, utube, web, secretary, secPhone, secEmail, party, position, district, previousTerms, projectOngoing, rating });
     await politician.save();
 
     return {

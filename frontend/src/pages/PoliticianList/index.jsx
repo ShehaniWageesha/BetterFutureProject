@@ -45,7 +45,7 @@ function PoliticiansList() {
 
   return (
     <div>
-      <h3>Politicians Info</h3>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic", color: "#424242" }}>Politicians Info</h2>
       <br></br>
       <table className="table">
         <thead className="thead-light">

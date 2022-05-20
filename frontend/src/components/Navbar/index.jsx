@@ -21,6 +21,16 @@ const NavBar = () => (
             Policy
           </Link>
         </li>
+        <li className="navbar-item">
+          <Link to="/" className="nav-link">
+            Party
+          </Link>
+        </li>
+        <li className="navbar-item">
+          <Link to="/" className="nav-link">
+            User Profile
+          </Link>
+        </li>
       </ul>
     </div>
   </nav>

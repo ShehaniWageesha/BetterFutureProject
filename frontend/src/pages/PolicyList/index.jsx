@@ -44,7 +44,7 @@ function PoliciesList() {
 
   return (
     <div>
-      <h3>Policy Suggestions</h3>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic", color: "#424242" }}>Policy Suggestions</h2>
       <br></br>
       <table className="table">
         <thead className="thead-light">
@@ -54,6 +54,7 @@ function PoliciesList() {
             <th>Challenge</th>
             <th>Suggestion</th>
             <th>Rating</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

@@ -1,6 +1,7 @@
 /** @format */
 import React, { useState } from "react";
 import axios from "axios";
+import suggest from './suggest.png';
 
 function CreatePolicy() {
   const [data, setData] = useState({
@@ -43,12 +44,16 @@ function CreatePolicy() {
   };
 
   return (
-    <div>
-      <h3>Suggest a Policy</h3>
+    <div style={{ color: "#424242" }}>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Suggest a Policy</h2>
       <br></br>
-      <form noValidate onSubmit={(e) => onSubmitForm(e)}>
+      <form
+        noValidate
+        onSubmit={(e) => onSubmitForm(e)}
+        style={{ width: "30rem", fontWeight: "bolder" }}
+      >
         <div className="form-group">
-          <label>Title :</label>
+          <label>Title</label>
           <input
             type="text"
             name="title"
@@ -56,10 +61,11 @@ function CreatePolicy() {
             className="form-control"
             value={data.title}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Subject :</label>
+          <label>Subject</label>
           <input
             type="text"
             name="subject"
@@ -67,10 +73,11 @@ function CreatePolicy() {
             className="form-control"
             value={data.subject}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Challenge :</label>
+          <label>Challenge</label>
           <input
             type="text"
             name="challenge"
@@ -78,10 +85,11 @@ function CreatePolicy() {
             className="form-control"
             value={data.challenge}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Suggestion :</label>
+          <label>Suggestion</label>
           <input
             type="text"
             name="suggestion"
@@ -89,16 +97,18 @@ function CreatePolicy() {
             className="form-control"
             value={data.suggestion}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Rating :</label>
+          <label>Rating</label>
           <input
             type="number"
             name="rating"
             className="form-control"
             value={data.rating}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <br></br>
@@ -106,8 +116,13 @@ function CreatePolicy() {
           <input
             type="submit"
             value="Suggest Policy"
-            className="btn btn-primary"
+            className="btn btn-dark"
           />
+        </div>
+      </form>
+      <form style={{ float: "right", marginTop: "-580px", opacity: "80%" }}>
+        <div>
+          <img src={suggest} alt="your suggestions" />
         </div>
       </form>
     </div>

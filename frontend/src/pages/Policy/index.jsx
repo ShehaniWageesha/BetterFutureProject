@@ -6,12 +6,12 @@ function Policy() {
     <div className="DashMain">
       <div>
         <Link to="/createPolicy" className="nav-link">
-          <h1>Add Policy</h1>
+          <h1 style={{ color: "#424242" }}>Add Policy</h1>
         </Link>
       </div>
       <div>
         <Link to="/policies" className="nav-link">
-          <h1>Policies</h1>
+          <h1 style={{ color: "#424242" }}>Policies</h1>
         </Link>
       </div>
     </div>

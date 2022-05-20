@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import suggest from './suggest.png';
 
 function EditPolicy() {
   const { id } = useParams();
@@ -52,7 +53,7 @@ function EditPolicy() {
       });
 
       console.log(res.data);
-      window.location.assign("http://localhost:3000");
+      window.location.assign("http://localhost:3000/policies");
       alert("Updated Successfully!");
     } catch (error) {
       console.log(error);
@@ -65,10 +66,10 @@ function EditPolicy() {
   }
 
   return (
-    <div>
-      <h3>Edit Policy</h3>
+    <div style={{ color: "#424242" }}>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Policy</h2>
       <br></br>
-      <form noValidate onSubmit={(e) => onSubmitForm(e)}>
+      <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ width: "30rem", fontWeight: "bolder" }}>
         <div className="form-group">
           <label>Title :</label>
           <input
@@ -78,6 +79,7 @@ function EditPolicy() {
             required
             className="form-control"
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
@@ -89,6 +91,7 @@ function EditPolicy() {
             className="form-control"
             defaultValue={policy.subject}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
@@ -100,6 +103,7 @@ function EditPolicy() {
             required
             className="form-control"
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
@@ -111,6 +115,7 @@ function EditPolicy() {
             className="form-control"
             defaultValue={policy.suggestion}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
@@ -121,6 +126,7 @@ function EditPolicy() {
             className="form-control"
             defaultValue={policy.rating}
             onChange={handleChange}
+            style={{ background: "transparent" }}
           />
         </div>
         <br></br>
@@ -128,8 +134,13 @@ function EditPolicy() {
           <input
             type="submit"
             value="Edit Policy"
-            className="btn btn-primary"
+            className="btn btn-dark"
           />
+        </div>
+      </form>
+      <form style={{ float: "right", marginTop: "-580px", opacity: "80%" }}>
+        <div>
+          <img src={suggest} alt="your suggestions" />
         </div>
       </form>
     </div>
