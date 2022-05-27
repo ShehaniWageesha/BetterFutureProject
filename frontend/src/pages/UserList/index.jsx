@@ -7,7 +7,7 @@ import { RoutePaths } from "../../routes/route-paths";
 import userP from "./user.png";
 
 function EditUser() {
-  const id = "6290721cc0287d38337155ee";
+  const id = "6290b4e6e1bf0bafc9c3f68c";
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -59,7 +59,7 @@ function EditUser() {
   }
 
   return (
-    <div style={{ marginLeft: "20rem", justifyContent: "center" }}>
+    <div style={{ color: "white", marginLeft: "20rem", justifyContent: "center" }}>
       <h2 style={{ fontFamily: "bolder", fontStyle: "italic", marginLeft: "10rem" }}>My Profile</h2>
       <br></br>
         <div>
@@ -68,7 +68,7 @@ function EditUser() {
       <form
         noValidate
         onSubmit={(e) => onSubmitForm(e)}
-        style={{ width: "30rem", fontWeight: "bolder" }}
+        style={{ width: "30rem", fontWeight: "bolder", color: "white" }}
       >
         <br></br>
         <div className="form-group">
