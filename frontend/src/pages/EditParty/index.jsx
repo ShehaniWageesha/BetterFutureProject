@@ -2,17 +2,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import suggest from './suggest.png';
 
-function EditPolicy() {
+function EditParty() {
   const { id } = useParams();
-  const [policy, setPolicy] = useState();
+  const [party, setParty] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const tempPolicy = await getData(id);
-      setPolicy(tempPolicy);
-      console.log(JSON.stringify(tempPolicy));
+      const tempParty = await getData(id);
+      setParty(tempParty);
+      console.log(JSON.stringify(tempParty));
     };
 
     fetchData();
@@ -20,7 +19,7 @@ function EditPolicy() {
 
   const getData = async (id) => {
     try {
-      const finalURL = "http://localhost:3333/api/v1/policy/" + id;
+      const finalURL = "http://localhost:3333/api/v1/party/" + id;
       const res = await axios.get(finalURL);
       return res.data.data;
     } catch (error) {
@@ -31,120 +30,105 @@ function EditPolicy() {
   function handleChange(evt) {
     const name = evt.target.name;
     const value = evt.target.value;
-    setPolicy({
-      ...policy,
+    setParty({
+      ...party,
       [name]: value,
     });
   }
 
   const onSubmitForm = async (e) => {
-    console.log(JSON.stringify(policy));
+    console.log(JSON.stringify(party));
     try {
       e.preventDefault();
 
       const res = await axios({
         method: "patch",
         baseURL: "http://localhost:3333",
-        url: "/api/v1/policy/" + id,
-        data: policy,
+        url: "/api/v1/party/" + id,
+        data: party,
         headers: {
           "Content-Type": "application/json",
         },
       });
 
       console.log(res.data);
-      window.location.assign("http://localhost:3000/policies");
+      window.location.assign("http://localhost:3000/parties");
       alert("Updated Successfully!");
     } catch (error) {
       console.log(error);
     }
   };
 
-  console.log(policy);
-  if (!policy) {
+  console.log(party);
+  if (!party) {
     return <>Loading the data</>;
   }
 
   return (
     <div style={{ color: "#424242" }}>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Policy</h2>
+       <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Edit Party</h2>
       <br></br>
       <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ width: "30rem", fontWeight: "bolder" }}>
-        <div className="form-group">
-          <label>Title :</label>
-          <input
-            type="text"
-            name="title"
-            defaultValue={policy.title}
-            required
-            className="form-control"
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
-        <div className="form-group">
-          <label>Subject :</label>
-          <input
-            type="text"
-            name="subject"
-            required
-            className="form-control"
-            defaultValue={policy.subject}
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
-        <div className="form-group">
-          <label>Challenge :</label>
-          <input
-            type="text"
-            name="challenge"
-            defaultValue={policy.challenge}
-            required
-            className="form-control"
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
-        <div className="form-group">
-          <label>Suggestion :</label>
-          <input
-            type="text"
-            name="suggestion"
-            required
-            className="form-control"
-            defaultValue={policy.suggestion}
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
-        <div className="form-group">
-          <label>Rating :</label>
-          <input
-            type="number"
-            name="rating"
-            className="form-control"
-            defaultValue={policy.rating}
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
+        <h5>BASIC INFO</h5>
         <br></br>
+        <div className="form-group">
+          <label>Partyname :</label>
+          <input
+            type="text"
+            name="partyname"
+            required
+            className="form-control"
+            defaultValue={party.partyname}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
+        <div className="form-group">
+          <label>Party Leader :</label>
+          <input
+            type="text"
+            name="partyleader"
+            required
+            className="form-control"
+            defaultValue={party.partyleader}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
+        <div className="form-group">
+          <label>Party Secretary :</label>
+          <input
+            type="text"
+            name="partysecretary"
+            required
+            className="form-control"
+            defaultValue={party.partysecretary}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
+        <div className="form-group">
+          <label>No Of MPs :</label>
+          <input
+            type="text"
+            name="noofmps"
+            required
+            className="form-control"
+            defaultValue={party.noofmps}
+            onChange={handleChange}
+            style={{ background: "transparent" }}
+          />
+        </div>
         <div className="form-group">
           <input
             type="submit"
-            value="Edit Policy"
+            value="Edit Parties"
             className="btn btn-dark"
           />
-        </div>
-      </form>
-      <form style={{ float: "right", marginTop: "-580px", opacity: "100%" }}>
-        <div>
-          <img src={suggest} alt="your suggestions" />
         </div>
       </form>
     </div>
   );
 }
 
-export default EditPolicy;
+export default EditParty;

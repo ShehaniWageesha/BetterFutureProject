@@ -1,16 +1,17 @@
 /** @format */
 import React, { useState } from "react";
 import axios from "axios";
-import suggest from './suggest.png';
+//import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-function CreatePolicy() {
+function AddParty() {
   const [data, setData] = useState({
-    title: "",
-    subject: "",
-    challenge: "",
-    suggestion: "",
-    rating: 5,
+    partyname: "",
+    partyleader: "",
+    partysecretary: "",
+    noofmps: "",
   });
+
 
   function handleChange(evt) {
     const name = evt.target.name;
@@ -28,7 +29,7 @@ function CreatePolicy() {
       const res = await axios({
         method: "post",
         baseURL: "http://localhost:3333",
-        url: "/api/v1/policy/",
+        url: "/api/v1/party/",
         data: data,
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +38,7 @@ function CreatePolicy() {
 
       console.log(res.data);
       alert("Data Saved Successfully!");
-      window.location.assign("http://localhost:3000/policies");
+      window.location.assign("http://localhost:3000/parties");
     } catch (error) {
       console.log(error);
     }
@@ -45,68 +46,59 @@ function CreatePolicy() {
 
   return (
     <div style={{ color: "#424242" }}>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Suggest a Policy</h2>
+      <h2 style={{ fontFamily: "bolder", fontStyle: "italic" }}>Add Party</h2>
       <br></br>
       <form
         noValidate
         onSubmit={(e) => onSubmitForm(e)}
         style={{ width: "30rem", fontWeight: "bolder" }}
       >
+      <h5>BASIC INFO</h5>
+      <br></br>
         <div className="form-group">
-          <label>Title</label>
+          <label>Party Name :</label>
           <input
             type="text"
-            name="title"
+            name="partyname"
             required
             className="form-control"
-            value={data.title}
+            value={data.partyname}
             onChange={handleChange}
             style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Subject</label>
+          <label>Party Leader :</label>
           <input
             type="text"
-            name="subject"
+            name="partyleader"
             required
             className="form-control"
-            value={data.subject}
+            value={data.partyleader}
             onChange={handleChange}
             style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Challenge</label>
+          <label>Party Secretary :</label>
           <input
             type="text"
-            name="challenge"
+            name="partysecretary"
             required
             className="form-control"
-            value={data.challenge}
+            value={data.partysecretary}
             onChange={handleChange}
             style={{ background: "transparent" }}
           />
         </div>
         <div className="form-group">
-          <label>Suggestion</label>
+          <label>No Of MPs :</label>
           <input
             type="text"
-            name="suggestion"
+            name="noofmps"
             required
             className="form-control"
-            value={data.suggestion}
-            onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
-        </div>
-        <div className="form-group">
-          <label>Rating</label>
-          <input
-            type="number"
-            name="rating"
-            className="form-control"
-            value={data.rating}
+            value={data.noofmps}
             onChange={handleChange}
             style={{ background: "transparent" }}
           />
@@ -115,18 +107,13 @@ function CreatePolicy() {
         <div className="form-group">
           <input
             type="submit"
-            value="Suggest Policy"
+            value="Add Parties"
             className="btn btn-dark"
           />
-        </div>
-      </form>
-      <form style={{ float: "right", marginTop: "-580px", opacity: "100%" }}>
-        <div>
-          <img src={suggest} alt="your suggestions" />
         </div>
       </form>
     </div>
   );
 }
 
-export default CreatePolicy;
+export default AddParty;

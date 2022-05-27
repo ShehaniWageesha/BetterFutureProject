@@ -47,7 +47,7 @@ const findAllUsers = async function (req, res) {
 const findOneUser = async (req, res) => {
   try {
     const user = await UserService.getUserById(req.params.id);
-    res.status(200).json(todo);
+    res.status(200).json(user);
   } catch (error) {
     res.status(404).json({ message: error.message });
   }
@@ -57,7 +57,7 @@ const findOneUser = async (req, res) => {
 const updateUser = async (req, res) => {
   try {
     const id = req.params.id;
-    const { fullname, nic, dob, gender, email, phonenu, school, qualification} = req.body;
+    const { fullname, nic, dob, gender, email, phonenu, school, qualification } = req.body;
 
     const result = await UserService.updateUser({
       id,
