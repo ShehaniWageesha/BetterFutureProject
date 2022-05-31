@@ -34,7 +34,7 @@ function LoginUser() {
       });
 
       console.log(res.data);
-      alert("Data Saved Successfully!");
+      //alert("Data Saved Successfully!");
       window.location.assign("http://localhost:3000/dashPolitician");
     } catch (error) {
       console.log(error);
