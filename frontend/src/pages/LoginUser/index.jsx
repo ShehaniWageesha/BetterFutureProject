@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import login from "./userlogin.png";
+import login from "./createuser.png";
 
 function LoginUser() {
   const [data, setData] = useState({
@@ -44,9 +44,11 @@ function LoginUser() {
   return (
     <center>
       <div style={{ color: "white", justifyContent: "center" }}>
+        <br></br>
+        <br></br>
         <div>
           <center>
-            <img src={login} alt="login" style={{ width: "300px" }} />
+            <img src={login} alt="login" style={{ width: "200px" }} />
           </center>
         </div>
         <br></br>

@@ -32,6 +32,10 @@ link{
   color: #d41a6b;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   background-image: url(./wallpaperNew.jpg);
   background-size: cover;
