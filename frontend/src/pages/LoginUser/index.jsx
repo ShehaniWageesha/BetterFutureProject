@@ -26,7 +26,7 @@ function LoginUser() {
       const res = await axios({
         method: "post",
         baseURL: "http://localhost:3333",
-        url: "/api/v1/user/",
+        url: "/api/v1/user/login",
         data: data,
         headers: {
           "Content-Type": "application/json",

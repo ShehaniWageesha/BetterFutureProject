@@ -7,7 +7,7 @@ import { RoutePaths } from "../../routes/route-paths";
 import userP from "./user.png";
 
 function EditUser() {
-  const id = "6290b4e6e1bf0bafc9c3f68c";
+  const id = "629cda8be804d3037a4dc643";
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -60,7 +60,7 @@ function EditUser() {
 
   return (
     <div style={{ color: "white", marginLeft: "20rem", justifyContent: "center" }}>
-      <h2 style={{ fontFamily: "bolder", fontStyle: "italic", marginLeft: "10rem" }}>My Profile</h2>
+      <h1 style={{ fontFamily: "bolder", fontStyle: "normal", marginLeft: "8rem" }}>WELCOME !</h1>
       <br></br>
         <div>
           <img src={ userP } alt="user" style={{ width: "15%", marginLeft: "10rem" }} />
