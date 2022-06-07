@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { RoutePaths } from "../../routes/route-paths";
+import "../../app/App";
 
 function PartiesList() {
   const [data, setData] = useState([]);

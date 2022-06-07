@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import betterfuture from "./bf.png";
-import Bfuture from "./BetterFuture.png"
+import Bfuture from "./BetterFuture.png";
 
 function Landing() {
   return (

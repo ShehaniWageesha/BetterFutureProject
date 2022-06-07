@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import "../../app/App";
 
 function EditUser() {
   const { id } = useParams();
@@ -138,9 +139,9 @@ function EditUser() {
             <label> Female </label>
           </div>
         </div>
-        <br></br>
+        </form>
+        <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ float: "right", width: "30rem", fontWeight: "bolder" }}>
         <h5 style={{ fontStyle: "italic" }}>CONTACT INFO</h5>
-      <br></br>
         <div className="form-group">
           <label>Email Address</label>
           <input
@@ -165,7 +166,6 @@ function EditUser() {
         </div>
         <br></br>
         <h5 style={{ fontStyle: "italic" }}>EDUCATIONAL INFO</h5>
-      <br></br>
         <div className="form-group">
           <label>School</label>
           <input

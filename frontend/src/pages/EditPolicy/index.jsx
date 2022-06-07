@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import suggest from './idea.png';
+import "../../app/App";
 
 function EditPolicy() {
   const { id } = useParams();

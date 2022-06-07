@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import suggest from './idea.png';
+import "../../app/App";
 
 function CreatePolicy() {
   const [data, setData] = useState({

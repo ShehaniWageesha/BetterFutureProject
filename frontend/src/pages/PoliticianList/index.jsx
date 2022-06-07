@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { RoutePaths } from "../../routes/route-paths";
-import { format } from "date-fns";
+import "../../app/App";
 
 function PoliticiansList() {
   const [data, setData] = useState([]);

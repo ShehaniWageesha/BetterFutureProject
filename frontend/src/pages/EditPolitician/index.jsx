@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { format } from "date-fns";
+import "../../app/App";
 
 function EditPolitician() {
   const { id } = useParams();
@@ -199,14 +200,25 @@ function EditPolitician() {
         </div>
         <div className="form-group">
           <label>Maximum Qualification</label>
-          <input
-            type="text"
+          <select
+            required
             name="maxQualifications"
             className="form-control"
-            defaultValue={data.maxQualifications}
+            value={data.maxQualifications}
             onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
+            style={{ background: "transparent", color: "darkgray", fontWeight: "bolder", backgroundColor: "transparent" }}
+          >
+            <option value="Certificate">Certificate</option>
+            <option value="Advanced Certificate">Advanced Certificate</option>
+            <option value="Diploma">Diploma</option>
+            <option value="Higher Diploma">Higher Diploma</option>
+            <option value="Bachelors">Bachelors</option>
+            <option value="Bachelors Hons.">Bachelors Hons.</option>
+            <option value="PG Certificate or Diploma">PG Certificate or Diploma</option>
+            <option value="MA, MSc">MA, MSc</option>
+            <option value="MPhil, DM">MPhil, DM</option>
+            <option value="PhD, MD">PhD, MD</option>
+          </select>
         </div>
         </form>
         <form noValidate onSubmit={(e) => onSubmitForm(e)} style={{ float: "right", width: "30rem", fontWeight: "bolder" }}>
@@ -304,14 +316,40 @@ function EditPolitician() {
         </div>
         <div className="form-group">
           <label>District</label>
-          <input
-            type="text"
+          <select
+            required
             name="district"
             className="form-control"
-            defaultValue={data.district}
+            value={data.district}
             onChange={handleChange}
-            style={{ background: "transparent" }}
-          />
+            style={{ background: "transparent", color: "darkgray", fontWeight: "bolder", backgroundColor: "transparent" }}
+          >
+            <option value="Gampaha">Gampaha</option>
+            <option value="Colombo">Colombo</option>
+            <option value="Kalutara">Kalutara</option>
+            <option value="Kandy">Kandy</option>
+            <option value="Matale">Matale</option>
+            <option value="Nuwara-Eliya">Nuwara-Eliya</option>
+            <option value="Matara">Matara</option>
+            <option value="Galle">Galle</option>
+            <option value="Hambanthota">Hambanthota</option>
+            <option value="Kegalle">Kegalle</option>
+            <option value="Ratnapura">Ratnapura</option>
+            <option value="Puttalam">Puttalam</option>
+            <option value="Kurunegala">Kurunegala</option>
+            <option value="Badulla">Badulla</option>
+            <option value="Monaragala">Monaragala</option>
+            <option value="Anuradapura">Anuradapura</option>
+            <option value="Polonnaruwa">Polonnaruwa</option>
+            <option value="Trincomalee">Trincomalee</option>
+            <option value="Batticaloa">Batticaloa</option>
+            <option value="Ampara">Ampara</option>
+            <option value="Jaffna">Jaffna</option>
+            <option value="Kilinochchi">Kilinochchi</option>
+            <option value="Mannar">Mannar</option>
+            <option value="Mullaitivu">Mullaitivu</option>
+            <option value="Vavuniya">Vavuniya</option>
+          </select>
         </div>
         <div className="form-group">
           <label>Previous Terms</label>

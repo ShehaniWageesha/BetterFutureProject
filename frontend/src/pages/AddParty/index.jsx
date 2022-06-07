@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "react-datepicker/dist/react-datepicker.css";
 import suggest from './party.png';
+import "../../app/App";
 
 function AddParty() {
   const [data, setData] = useState({
@@ -11,7 +12,6 @@ function AddParty() {
     partysecretary: "",
     noofmps: "",
   });
-
 
   function handleChange(evt) {
     const name = evt.target.name;
