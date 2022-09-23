@@ -1,4 +1,4 @@
-<h1>CPolitician Data Management System - MERN Project</h1>
+<h1>Politician Data Management System - MERN Project</h1>
 <br/>
 This application implemented using MERN stack. React for front-end development and back-end server based on Node.js, Express, and MongoDB.
 <br/><br/>
